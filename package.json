@@ -1,0 +1,16 @@
+{
+  "name": "talentdesk-ats",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c green,blue \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "npm --workspace server run dev",
+    "dev:client": "npm --workspace client run dev",
+    "build": "npm --workspace client run build",
+    "test": "npm --workspace server test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
